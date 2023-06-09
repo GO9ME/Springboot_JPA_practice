@@ -37,9 +37,14 @@ public class JPADAOImpl implements JPADAO {
 	@Override
 	public void update(BoardDTO updatedata) {
 		// 업데이트와 삭제는 조회를 먼저하고 수정과 삭제를 한다.
+		System.out.println("===========updatedata==========");
+		System.out.println(updatedata);
 		BoardDTO data = entityManager.find(BoardDTO.class, updatedata.getBoardNo());
 		data.setTitle(updatedata.getTitle());
 		data.setContent(updatedata.getContent());
+		System.out.println("===========data==========");
+		System.out.println(data);
+		entityManager.merge(data);
 
 	}
 

@@ -59,6 +59,7 @@ public class JPAController {
 	// 게시글수정하기
 	@PostMapping("/dept/update")
 	public String update(BoardDTO updateInfo) {
+		System.out.println("===========test==========");
 		service.update(updateInfo);
 		return "thymeleaf/index";
 	}
