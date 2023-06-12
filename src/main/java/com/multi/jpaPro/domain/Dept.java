@@ -18,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 //전체 멤버변수를 매개변수로 하는 생성자 정의
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Entity
 @Table(name = "dept")
 public class Dept {
@@ -38,12 +37,22 @@ public class Dept {
 	private String mgr_id;
 	private String deptaddr;
 	private String depttel;
+	
+	
 
-	public Dept(@NonNull String deptname, String deptlevel, String deptstep) {
+	/*
+	 * public Dept(@NonNull String deptname, String deptlevel, String deptstep) {
+	 * super(); this.deptname = deptname; this.deptlevel = deptlevel; this.deptstep
+	 * = deptstep; }
+	 */
+
+
+	public Dept(@NonNull String deptno, @NonNull String deptname) {
 		super();
+		this.deptno = deptno;
 		this.deptname = deptname;
-		this.deptlevel = deptlevel;
-		this.deptstep = deptstep;
 	}
+	
+	
 
 }
